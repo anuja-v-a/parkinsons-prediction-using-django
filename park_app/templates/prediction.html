@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} New Department | ITSC-HRMS {% endblock title %}
+
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin">
+                    <div class="card">
+                        <div class="card-body">
+                           <h4 class="text-center text-primary"><i class="fa fa-plus">&emsp; Prediction</i></h4><hr>
+                                <form class="form-group" action="/save_prediction/{{data.id}}" method="POST">
+                                    {% csrf_token %}
+                                    <label for="fname">Patient Name</label>
+                                    <input type="text" name="patient_name" value="{{data.patient_name}}" class="form-control" placeholder="Patient name" required>
+                                                          <label for="fname">MDVP:Fo(Hz)</label>
+                                    <input type="text" name="MDVP:Fo(Hz)" class="form-control" placeholder="MDVP:Fo(Hz)" required>
+                                                          <label for="fname">MDVP:Flo(Hz)</label>
+                                    <input type="text" name="MDVP:Flo(Hz)" class="form-control" placeholder="MDVP:Flo(Hz)" required>
+                                                          <label for="fname">MDVP:Jitter(Abs)</label>
+                                    <input type="text" name="MDVP:Jitter(Abs)" class="form-control" placeholder="MDVP:Jitter(Abs)" required>
+                                                          <label for="fname">MDVP:Shimmer</label>
+                                    <input type="text" name="MDVP:Shimmer" class="form-control" placeholder="MDVP:Shimmer" required>
+                                                          <label for="fname">MDVP:Shimmer(dB)</label>
+                                    <input type="text" name="MDVP:Shimmer(dB)" class="form-control" placeholder="MDVP:Shimmer(dB)" required>
+                                                          <label for="fname">MDVP:APQ</label>
+                                    <input type="text" name="MDVP:APQ" class="form-control" placeholder="MDVP:APQ" required>
+
+                                    <label for="fname">Shimmer:DDA</label>
+                                    <input type="text" name="Shimmer:DDA" class="form-control" placeholder="Shimmer:DDA" required>
+                                    <label for="fname">HNR</label>
+                                    <input type="text" name="HNR" class="form-control" placeholder="HNR" required>
+                                    <label for="fname">RPDE</label>
+                                    <input type="text" name="RPDE" class="form-control" placeholder="RPDE" required>
+
+                                              <label for="fname">DFA</label>
+                                    <input type="text" name="DFA" class="form-control" placeholder="DFA" required>
+                                    <label for="fname">Spread1</label>
+                                    <input type="text" name="Spread1" class="form-control" placeholder="Spread1" required>
+                                    <label for="fname">Spread2</label>
+                                    <input type="text" name="Spread2" class="form-control" placeholder="Spread2" required>
+                                     <label for="fname">D2</label>
+                                    <input type="text" name="D2" class="form-control" placeholder="D2" required>
+                                    <label for="fname">PPE</label>
+                                    <input type="text" name="PPE" class="form-control" placeholder="PPE" required>
+
+
+                                    <div class="text-center mt-3">
+                                        <button class="btn btn-outline-success"><i class="mdi mdi-file-document"></i>Predict</button></button>
+
+                                    </div>
+                                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var messages = '{{messages}}'
+    if (messages == "invalid"){
+        sweetAlert("Department Already exists","","error");
+    }
+</script>
+{% endblock content %}
+
+</body>
+</html>

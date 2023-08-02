@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Dashboard | ITSC-HRMS {% endblock title %}
+      <!--  MAIN BODY START HERE -->
+          {% block content %}
+
+            <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+           
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-account-alert text-warning icon-lg"></i>
+                    </div>
+                    <div class="float-right">
+                      <p class="mb-0 text-right">Administrators</p>
+                      <div class="fluid-container">
+                        <h3 class="font-weight-medium text-right mb-0">1</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">
+                    <i class="mdi mdi-bookmark-outline mr-1" aria-hidden="true"></i> Administrators
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-home text-success icon-lg"></i>
+                    </div>
+                    <div class="float-right">
+                      <p class="mb-0 text-right">Predictions</p>
+                      <div class="fluid-container">
+                        <h3 class="font-weight-medium text-right mb-0">{{dep.count}}</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">
+                    <i class="mdi mdi-calendar mr-1" aria-hidden="true"></i> Available Departments
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-account-multiple text-info icon-lg"></i>
+                    </div>
+                    <div class="float-right">
+                      <p class="mb-0 text-right">Patients</p>
+                      <div class="fluid-container">
+                        <h3 class="font-weight-medium text-right mb-0">{{emp.count}}</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3 mb-0">
+                    <i class="mdi mdi-reload mr-1" aria-hidden="true"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var messages = '{{messages}}'
+        if (messages == "invalid"){
+            sweetAlert("Salary of this month is already added","","error");
+        }
+    </script>
+        {% endblock content %}

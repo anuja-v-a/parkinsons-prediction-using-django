@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        @page{
+          size:'A4';
+          margin: 2.5cm 3.5cm 2cm 3cm;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>Patient Name :  {{patient}}</h1>
+<h1>Doctor Name :  {{doctor}}</h1>
+<table border="1" width="100%"><tr>
+    <th>MDVP:Fo(Hz)</th>
+        <th>MDVP:Flo(Hz)</th>
+        <th>MDVP:Jitter(Abs)</th>
+        <th>MDVP:Shimmer</th>
+        <th>MDVP:Shimmer(dB)</th>
+        <th>MDVP:APQ</th>
+        <th>Shimmer:DDA</th>
+        <th>HNR</th>
+    <th>RPDE</th>
+    <th>DFA</th>
+    <th>Spread1</th>
+    <th>Spread2</th>
+    <th>D2</th>
+    <th>PPE</th>
+    </tr>
+    <tr>
+        <td>{{Fo}}</td>
+        <td>{{Flo}}</td>
+        <td>{{Abs}}</td>
+        <td>{{shimmer}}</td>
+        <td>{{dB}}</td>
+        <td>{{APO}}</td>
+        <td>{{DDA}}</td>
+        <td>{{HNR}}</td>
+        <td>{{RPDE}}</td>
+        <td>{{DFA}}</td>
+        <td>{{Spread1}}</td>
+        <td>{{Spread2}}</td>
+        <td>{{D2}}</td>
+        <td>{{PPE}}</td>
+
+
+    </tr>
+</table>
+</body>
+</html>

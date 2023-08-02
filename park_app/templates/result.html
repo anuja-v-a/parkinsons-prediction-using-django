@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} Employee's Info | ITSC-HRMS {% endblock title %}
+{% block content %}
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <body>
+<center>
+    <h1 style="font-size:50px;">The Result of Parkinson Disease</h1>
+{% if status == 1 %}
+<input type="text" value="POSITIVE" style="height:50px;font-size:30px;">
+{% else %}
+<input type="text" value="NEGATIVE">
+{% endif %}
+    </center>
+</body>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,126 @@
+{% extends 'layout1.html' %}
+{% load static %}
+{% block title %} All Employees | ITSC-HRMS {% endblock title %}
+      <!--  MAIN BODY START HERE -->
+          {% block content %}
+
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="row">
+            <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/dashboard/">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Doctors </li>
+
+                    </ol>
+                </nav>
+            <div class="col-lg-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+
+
+                 <h4 class="card-title"><a href="/doctor_register/" class="btn btn-sm btn-success mb-3 float-right">Add New +</a></h4>
+
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+
+                        <tr>
+                          <th>
+                           Doctors
+                          </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+  {% for i in data  %}
+                        <tr>
+
+                            <td>
+                           {{i.doctor_name}}
+                          </td>
+                            <td>
+                           {{i.mobile}}
+                          </td>
+                                                      <td>
+                           {{i.address}}
+                          </td>
+                                                      <td>
+                           {{i.email}}
+                          </td>
+                                                      <td>
+                           {{i.age}}
+                          </td>
+                                                      <td>
+                           {{i.username}}
+                          </td>
+                                                      <td>
+                           {{i.password}}
+                          </td>
+                          <td>
+                          
+                            <div class="btn-group dropdown">
+                              <button type="button" class="btn btn-success dropdown-toggle btn-rounded btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fa fa-cog "></i>Manage
+                              </button>
+                              <div class="dropdown-menu">
+
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/edit_doctor/{{i.id}}">
+                                  <i class="fa fa-edit text-info fa-fw"></i>Edit</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/delete_doctor/{{i.id}}">
+                                  <i class="fa fa-trash text-danger fa-fw"></i>Delete</a>
+                              </div>
+                            </div>                  
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+
+                    {% if is_paginated %}
+                      <nav aria-label="Page navigation example" class='mt-4'>
+                        <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                          <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a></li>
+                        {% else %}
+
+                          <li class="page-item disabled"><span class='page-link '>Previous</span></li>
+                        {% endif %}
+                          <li class="disabled"> <span class='page-link'> Page {{page_obj.number}} of {{page_obj.paginator.num_pages}} </span></li>
+                        {% if page_obj.has_next %}
+                          <li class="page-item"><a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a></li>
+                        {% else %}
+                          <li class="page-item disabled"><span class='page-link '>Next</span></li> 
+                        {% endif %}                        
+                        </ul>
+                    </nav>
+                    {% endif %}
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- {% block noty %}
+        <script>
+          {% if messages %}
+            {% for message in messages  %}
+              toastr.success('{{message}}')
+            {% endfor %}
+          {% endif %}
+        </script>
+        {% endblock noty %} -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var messages = '{{messages}}'
+    if (messages == "invalid"){
+        sweetAlert("Department Already exists","","error");
+    }
+</script>
+        {% endblock content %}
+

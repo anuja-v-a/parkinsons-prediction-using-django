@@ -1,0 +1,117 @@
+{% extends 'layout1.html' %}
+{% load static %}
+
+
+
+
+
+
+{% block title %} Dashboard | ITSC-HRMS {% endblock title %}
+      <!--  MAIN BODY START HERE -->
+          {% block content %}
+<!--  <div class="container-scroller">-->
+<!--    <div class="container-fluid page-body-wrapper full-page-wrapper auth-page">-->
+      <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
+        <div class="row w-100 mt-5">
+          <div class="col-lg-4 mx-auto">
+
+            <p class="display-4 mb-4 text-center text-white bg-info" style="padding-top: 0px;padding-bottom: 0px;margin-top: -15px;border-top-style: solid;border-top-width: 0px;">Doctor Register</p>            <div class="auto-form-wrapper mb-5">
+                <form method="POST" action="/save_register/" enctype="multipart/form-data">
+                    {% csrf_token %}
+                  <div class="form-group">
+                  <label class="label">Name</label>
+                  <div class="input-group">
+                    <input type="text" name="doctor_name" class="form-control" placeholder="name" autocomplete="off" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label class="label">Email</label>
+                  <div class="input-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email" autocomplete="off" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label class="label">Mobile</label>
+                  <div class="input-group">
+                    <input type="number" name="mobile" class="form-control" placeholder="mobile" autocomplete="off" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label class="label">Job Level</label>
+                  <div class="input-group">
+                    <input type="text" name="job_level" class="form-control" placeholder="Job Level" autocomplete="off" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label class="label">Username</label>
+                  <div class="input-group">
+                    <input type="text" name="username" class="form-control" placeholder="name" autocomplete="off" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="label">Password</label>
+                  <div class="input-group">
+                    <input type="password" name="password" class="form-control" placeholder="password" required>
+
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                  <div class="form-group">
+                  <label class="label">Image</label>
+                  <div class="input-group">
+                    <input type="file" name="image" class="form-control" placeholder="image" autocomplete="off" required>
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-primary submit-btn btn-block">Login</button>
+                </div>
+                <!-- <div class="text-block text-center my-3">
+                  <span class="text-small font-weight-semibold">Not a member ?</span>
+                  <a href="" class="text-black text-small">Create new account</a>
+                </div> -->
+              </form>
+          </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- <p class="footer-text text-center mt-4" style="background-color: blue; color: white;">Copyright © {{ 2021}} Itsourcecode Human Resource Management. All Rights Reserved.</p> -->
+
+      <!-- content-wrapper ends -->
+
+{% endblock content %}

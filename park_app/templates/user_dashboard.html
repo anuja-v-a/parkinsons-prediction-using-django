@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <style>
+    .wrapper {
+    width: auto;
+    height: 100vh;
+
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'images/park2.webp' %}") ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: opacity(80%);
+  }
+    </style>
+
+</head>
+
+{% include 'user_base.html' %}
+<body>
+
+</body>
+</html>
